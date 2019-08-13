@@ -6,4 +6,7 @@ spring:
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:${server.port}/eureka/
+      defaultZone: http://localhost:8761/eureka/
+  server:
+    eviction-interval-timer-in-ms: 5000 # 每隔 5s 对所有失效的服务（超过 10s 未响应）进行剔除,默认 60s
+    enable-self-preservation: false # 关闭自我保护状态

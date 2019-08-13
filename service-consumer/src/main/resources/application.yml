@@ -7,3 +7,5 @@ eureka:
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka/
+    fetch-registry: true # true, 会从Eureka Server服务的列表只读备份，然后缓存在本地，默认为 true
+    registry-fetch-interval-seconds: 5 # 每隔 5s 重新获取并更新数据，默认 30s
