@@ -7,5 +7,11 @@ eureka:
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka/
-    fetch-registry: true # true, »á´ÓEureka Server·şÎñµÄÁĞ±íÖ»¶Á±¸·İ£¬È»ºó»º´æÔÚ±¾µØ£¬Ä¬ÈÏÎª true
-    registry-fetch-interval-seconds: 5 # Ã¿¸ô 5s ÖØĞÂ»ñÈ¡²¢¸üĞÂÊı¾İ£¬Ä¬ÈÏ 30s
+    fetch-registry: true # true, ä¼šä»Eureka ServeræœåŠ¡çš„åˆ—è¡¨åªè¯»å¤‡ä»½ï¼Œç„¶åç¼“å­˜åœ¨æœ¬åœ°ï¼Œé»˜è®¤ä¸º true
+    registry-fetch-interval-seconds: 5 # æ¯éš” 5s é‡æ–°è·å–å¹¶æ›´æ–°æ•°æ®ï¼Œé»˜è®¤ 30s
+# ä¿®æ”¹Ribbonè´Ÿè½½å‡è¡¡ç­–ç•¥ é»˜è®¤æ˜¯è½®è¯¢ com.netflix.loadbalancer.RoundRobinRule
+# com.netflix.loadbalancer.IRuleæ¥å£çš„å®ç°ç±»
+# æœåŠ¡æä¾›æ–¹çš„æœåŠ¡id
+service-provider:
+  ribbon:
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule

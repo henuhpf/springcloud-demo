@@ -17,11 +17,15 @@ import java.util.List;
 @RequestMapping("consumer/user")
 public class UserController {
 
-    @Autowired
+//    @Autowired
     private RestTemplate restTemplate;
-
     @Autowired
-    private DiscoveryClient discoveryClient;
+    public UserController(RestTemplate restTemplate) {
+        this.restTemplate = restTemplate;
+    }
+
+    //    @Autowired
+//    private DiscoveryClient discoveryClient;
 
     @GetMapping
     @ResponseBody
@@ -29,10 +33,10 @@ public class UserController {
 //        User user = this.restTemplate.getForObject("http://localhost:8081/user/" + id, User.class);
 //        return user;
 
-        List<ServiceInstance> instances = discoveryClient.getInstances("service-provider");
-        ServiceInstance instance = instances.get(0);
-        User user = this.restTemplate.getForObject("http://" + instance.getHost() + ":" + instance.getPort() + "/user/" + id, User.class);
-        return user;
+//        List<ServiceInstance> instances = discoveryClient.getInstances("service-provider");
+//        ServiceInstance instance = instances.get(0);
+//        User user = this.restTemplate.getForObject("http://" + instance.getHost() + ":" + instance.getPort() + "/user/" + id, User.class);
+        return this.restTemplate.getForObject("http://service-provider/user/" + id, User.class);
     }
 
 }

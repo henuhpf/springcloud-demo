@@ -8,5 +8,5 @@ eureka:
     service-url:
       defaultZone: http://localhost:8761/eureka/
   server:
-    eviction-interval-timer-in-ms: 5000 # Ã¿¸ô 5s ¶ÔËùÓĞÊ§Ğ§µÄ·şÎñ£¨³¬¹ı 10s Î´ÏìÓ¦£©½øĞĞÌŞ³ı,Ä¬ÈÏ 60s
-    enable-self-preservation: false # ¹Ø±Õ×ÔÎÒ±£»¤×´Ì¬
+    eviction-interval-timer-in-ms: 5000 # æ¯éš” 5s å¯¹æ‰€æœ‰å¤±æ•ˆçš„æœåŠ¡ï¼ˆè¶…è¿‡ 10s æœªå“åº”ï¼‰è¿›è¡Œå‰”é™¤,é»˜è®¤ 60s
+    enable-self-preservation: false # å…³é—­è‡ªæˆ‘ä¿æŠ¤çŠ¶æ€
