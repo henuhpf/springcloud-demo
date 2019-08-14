@@ -16,11 +16,13 @@ public class HystrixController {
     private UserService userService;
 
     @GetMapping("{id}")
-    public User queryUserById(@PathVariable("id") Long id) {
-        try {
-            Thread.sleep(20000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
+    public User hystrixQueryUserById(@PathVariable("id") Long id) {
+        if(id == 2){
+            try {
+                 Thread.sleep(20000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         }
         return this.userService.queryUserById(id);
     }
