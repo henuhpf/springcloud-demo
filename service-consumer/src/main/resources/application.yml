@@ -15,3 +15,10 @@ eureka:
 service-provider:
   ribbon:
     NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 1000 # 设置 hystrix 的超时时间 ,默认 1000ms，开发环境机器运行速度慢的情况下，可以适当调大一些

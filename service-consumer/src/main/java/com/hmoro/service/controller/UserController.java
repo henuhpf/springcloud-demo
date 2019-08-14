@@ -17,7 +17,7 @@ import java.util.List;
 @RequestMapping("consumer/user")
 public class UserController {
 
-//    @Autowired
+    //    @Autowired
     private RestTemplate restTemplate;
     @Autowired
     public UserController(RestTemplate restTemplate) {
