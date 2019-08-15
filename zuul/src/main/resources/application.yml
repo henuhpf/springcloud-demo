@@ -1,0 +1,17 @@
+server:
+  port: 8090
+spring:
+  application:
+    name: zuul
+# zuul.routes 可以不配置，springcloud默认配置 serviceId: /serviceId/**
+zuul:
+  routes:
+    service-provider: /provider/** # serviceId: 访问路径
+  prefix: /api # 访问时需加上前缀，可选项
+#      path: /service-provider/**
+##     url: http://localhost:8082
+#      serviceId: service-provider
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
