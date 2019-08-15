@@ -6,7 +6,7 @@ spring:
 # zuul.routes 可以不配置，springcloud默认配置 serviceId: /serviceId/**
 zuul:
   routes:
-    service-provider: /provider/** # serviceId: 访问路径
+    service-provider: /provider/** # serviceId: 服务映射路径
   prefix: /api # 访问时需加上前缀，可选项
 #      path: /service-provider/**
 ##     url: http://localhost:8082
